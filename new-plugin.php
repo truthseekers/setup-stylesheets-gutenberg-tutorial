@@ -24,9 +24,16 @@ function new_plugin_setup()
         array('wp-edit-blocks')
     );
 
+    wp_register_script(
+        'jsc-courses-frontend-script', //handle
+        plugins_url('/src/frontend.js', __FILE__),
+        array('jquery')
+    );
+
     register_block_type('truth/new-plugin-block', array(
         'editor_script' => 'truth-new-plugin-script',
-        'editor_style'  => 'truth-new-block-style'
+        'editor_style'  => 'truth-new-block-style',
+        'script' => 'jsc-courses-frontend-script'
     ));
 }
 
