@@ -1,6 +1,6 @@
 console.log("hello from new-plugin js lala");
 import { registerBlockType } from '@wordpress/blocks';
-import './style.css';
+import './style.editor.scss';
 
 registerBlockType('truth/new-plugin-block', {
     title: 'new plugin block',
