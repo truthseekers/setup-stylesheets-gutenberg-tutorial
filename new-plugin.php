@@ -19,9 +19,15 @@ function new_plugin_setup()
     );
 
     wp_register_style(
-        'truth-new-block-style',
-        plugins_url('/src/style.css', __FILE__),
+        'truth-new-block-editor-style',
+        plugins_url('/build/editorStyles.css', __FILE__),
         array('wp-edit-blocks')
+    );
+
+    wp_register_style(
+        'truth-new-block-frontend-styles',
+        plugins_url('/build/frontendStyles.css', __FILE__)
+        // array('wp-edit-blocks')
     );
 
     wp_register_script(
@@ -32,8 +38,9 @@ function new_plugin_setup()
 
     register_block_type('truth/new-plugin-block', array(
         'editor_script' => 'truth-new-plugin-script',
-        'editor_style'  => 'truth-new-block-style',
-        'script' => 'jsc-courses-frontend-script'
+        'editor_style'  => 'truth-new-block-editor-style',
+        'script' => 'jsc-courses-frontend-script',
+        'style' => 'truth-new-block-frontend-styles'
     ));
 }
 

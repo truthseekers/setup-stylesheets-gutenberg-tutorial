@@ -33,7 +33,8 @@ module.exports = {
     ...defaultConfig,
     entry: {
         ...defaultConfig.entry,
-        style: './src/style.js'
+        frontEndStyles: './src/frontEndStyles.js',
+        editorStyles: './src/editorStyles.js'
     },
     module: {
         ...defaultConfig.module,
